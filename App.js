@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {View } from 'react-native';
+import Header from './src/components/uiKit/header.js';
 
 export default class App extends Component {
   
@@ -9,42 +10,16 @@ export default class App extends Component {
       }
       
     
-  
-  componentDidMount(){
-    console.log('componentDidMount')
-  }
-  render(){
-    console.log('state', this.state.title)
-  return (
-    
+render() {
 
-   <View style= {styles.ViewStyles}>
-     <Text style={styles.textStyle}>{this.state.title}</Text>
-   </View>
+
+  return (
+  <View>
+    <Header title={this.state.title}/>
+  </View>
   )
   }
-
 }
+    
 
-const styles = StyleSheet.create({
-  ViewStyles: {
-    backgroundColor:'#30d0fe',
-    height:116,
-    justifyContent: 'center',
-    paddingLeft:22,
-    paddingTop: 71,
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 2},
-    shadowOpacity: 0.2,
-    elevation: 2,
-    position: 'relative'
-
-  
-  },
-  textStyle : {
-    color: '#fff',
-
-  fontSize: 28,
-  fontFamily: 'AvenirNext-DemiBold'
-  }
-})
+    
