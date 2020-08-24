@@ -6,17 +6,27 @@ const url = 'https://s3.eu-central-1.wasabisys.com/ghashtag/RNForKids/00-Init/da
 export default class App extends Component {
   
   state = {
-        title : 'STAR GATE'
+        title : 'STAR GATE',
+        data : []
       }
 
       componentDidMount = async() => {
-        const response = await fetch (url)
+        try {
+        const response = await fetch(url)
         const data = await response.json()
-        console.log(data)
-
         this.setState({ data })
-
+          
+        } catch (e) {
+          throw e
+          
+        } 
       }
+      
+          
+
+        
+
+      
       
     
 render() {
