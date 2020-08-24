@@ -3,12 +3,23 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default class App extends Component {
+  
+  state = {
+        title : 'STAR GATE'
+      }
+      
+    
+  
+  componentDidMount(){
+    console.log('componentDidMount')
+  }
   render(){
+    console.log('state', this.state.title)
   return (
     
 
    <View style= {styles.ViewStyles}>
-     <Text style={styles.textStyle}>STAR GATE</Text>
+     <Text style={styles.textStyle}>{this.state.title}</Text>
    </View>
   )
   }
