@@ -1,9 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react'
-import {View } from 'react-native'
+import {View, ScrollView, StyleSheet } from 'react-native'
 import {Header, ImageCard} from './src/components/uiKit'
-import { h,w} from './constant'
-
 
 const url = 'https://s3.eu-central-1.wasabisys.com/ghashtag/RNForKids/00-Init/data.json'
 export default class App extends Component {
@@ -26,16 +24,34 @@ export default class App extends Component {
       }
 
 render() {
-
-console.log(w, h)
+  const { title, data} = this.state
+  const { container } = styles
   return (
   <View>
-    <Header title={this.state.title}/>
-    <ImageCard></ImageCard>
+      <Header title={title}/>
+      <ScrollView>
+        <View style = {container}>
+        { data.map(item => (
+            <ImageCard data = {item} key = {item.id} />   
+        ))
+        }
+      </View>
+      </ScrollView>
   </View>
   )
   }
 }
+const styles = StyleSheet.create({
+  container : {
+    marginTop: 30,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    flexShrink: 2,
+    justifyContent: 'space-around',
+    marginBottom: 150
+    
+  }
+})
     
 
     
