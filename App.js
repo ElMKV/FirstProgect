@@ -18,7 +18,7 @@ export default class App extends Component {
         this.setState({ data })
           
         } catch (e) {
-          throw e
+          throw e 
           
         } 
       }
