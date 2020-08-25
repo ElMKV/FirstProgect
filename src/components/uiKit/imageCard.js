@@ -3,14 +3,15 @@ import { Text, StyleSheet, View, Image } from 'react-native'
 import { w} from '../../../constant'
 
 
-const ImageCard = () => {
+const ImageCard = ({data}) => {
     const { h1, cover, container, sub } = styles
+    const { image, name} = data
     return (
         <View style={container}>
             <View style = {sub}>
-                <Image style={cover} source = {{uri: 'https://picsum.photos/200/300?random=1'}} />
+                <Image style={cover} source = {{uri: image}} />
             </View>
-                <Text style = {h1}>Stargate
+                <Text style = {h1}> {name.toUpperCase()}
             </Text>
        </View>
     )
@@ -18,7 +19,8 @@ const ImageCard = () => {
 
 const styles = StyleSheet.create({
     container:{
-        width: w/2.1
+        width: w/2.4,
+        paddingVertical: 10
         
     },
     h1: {
@@ -26,7 +28,8 @@ const styles = StyleSheet.create({
         fontSize: 18,
         alignSelf: 'center',
         textAlign : 'center',
-        width: w / 2.4
+        width: w / 2.4,
+        paddingTop: 10,
     },
     cover: {
         width: w/2.3,
@@ -38,7 +41,10 @@ const styles = StyleSheet.create({
         shadowColor: '#000',
         shadowRadius: 8,
         shadowOffset: {width: 0, height: 5},
-        shadowOpacity: 0.4 
+        shadowOpacity: 0.4,
+        backgroundColor: 'white',
+        borderRadius: 10, 
+        
 
     }
 })
