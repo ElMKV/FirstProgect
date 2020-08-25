@@ -2,6 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react'
 import {View } from 'react-native'
 import {Header, ImageCard} from './src/components/uiKit'
+import { h,w} from './constant'
+
 
 const url = 'https://s3.eu-central-1.wasabisys.com/ghashtag/RNForKids/00-Init/data.json'
 export default class App extends Component {
@@ -32,7 +34,7 @@ export default class App extends Component {
     
 render() {
 
-console.log(this.state)
+console.log(w, h)
   return (
   <View>
     <Header title={this.state.title}/>
