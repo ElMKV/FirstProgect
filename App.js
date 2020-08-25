@@ -1,13 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react'
-import {View, ScrollView, StyleSheet } from 'react-native'
-import {Header, ImageCard} from './src/components/uiKit'
+import {View, ScrollView, StyleSheet, TextInput } from 'react-native'
+import {Header, Text} from './src/components/uiKit'
 
-const url = 'https://s3.eu-central-1.wasabisys.com/ghashtag/RNForKids/00-Init/data.json'
+const url = 'https://next.json-generator.com/api/json/get/NkntzgAGK'
 export default class App extends Component {
   
   state = {
-        title : 'STAR GATE',
+        title : 'Диалоги',
         data : []
       }
 
@@ -26,20 +26,34 @@ export default class App extends Component {
 render() {
   const { title, data} = this.state
   const { container } = styles
+
   return (
   <View>
       <Header title={title}/>
-      <ScrollView>
+      {/* <ScrollView>
         <View style = {container}>
         { data.map(item => (
-            <ImageCard data = {item} key = {item.id} />   
+            <Text data = {item} key = {item.id} />   
         ))
         }
       </View>
-      </ScrollView>
+      </ScrollView> */}
+      <View>
+        
+      </View>
+
+
+      
+    
   </View>
+  
+
+  
+  
   )
   }
+
+  
 }
 const styles = StyleSheet.create({
   container : {
@@ -50,8 +64,16 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     marginBottom: 150
     
+  },
+
+  input:{
+
+    backgroundColor: 'gold'
+
   }
 })
+
+ 
     
 
     

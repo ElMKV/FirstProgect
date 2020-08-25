@@ -15,23 +15,19 @@ const Header = ({ title }) => {
 
 const styles = StyleSheet.create({
     ViewStyles: {
-      backgroundColor:'#30d0fe',
-      height:116,
+      backgroundColor:'white',
+      height:70,
       justifyContent: 'center',
-      paddingLeft:22,
-      paddingTop: 71,
-      shadowColor: '#000',
-      shadowOffset: {width: 0, height: 2},
-      shadowOpacity: 0.2,
-      elevation: 2,
-      position: 'relative'
+
+      
   
     
     },
     textStyle : {
-    color: '#fff',
-    fontSize: 28,
+    color: 'black',
+    fontSize: 22,
     fontFamily: 'AvenirNext-DemiBold',
+    alignSelf: 'center'
     
     }
   })
