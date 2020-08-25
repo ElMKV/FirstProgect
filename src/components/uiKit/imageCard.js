@@ -4,20 +4,16 @@ import { w} from '../../../constant'
 
 
 const ImageCard = ({data}) => {
-    const { h1, cover, container, sub,yearStyle } = styles
-    const { image, name, year} = data
+    const { h1, cover, container, sub } = styles
+    const { image, name} = data
     return (
         <View style={container}>
             <View style = {sub}>
                 <Image style={cover} source = {{uri: image}} />
             </View>
-            <Text style = {h1}> {name.toUpperCase()}</Text>
-
-            <View>
-                <Text style={yearStyle}>{year}</Text>
-            </View>
+                <Text style = {h1}> {name.toUpperCase()}
+            </Text>
        </View>
-       
     )
 }
 
@@ -33,14 +29,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         textAlign : 'center',
         width: w / 2.4,
-        paddingTop: 10
-    },
-
-    yearStyle: {
-        fontSize: 14,
-        textAlign: 'center',
-        color: '#000099'
-
+        paddingTop: 10,
     },
     cover: {
         width: w/2.3,
