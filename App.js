@@ -35,7 +35,7 @@ render() {
             <ImageCard data = {item} key = {item.id} />   
         ))
         }
-      </View>
+        </View>
       </ScrollView>
   </View>
   )
