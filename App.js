@@ -3,11 +3,11 @@ import React, { Component } from 'react'
 import {View, ScrollView, StyleSheet } from 'react-native'
 import {Header, ImageCard} from './src/components/uiKit'
 
-const url = 'https://s3.eu-central-1.wasabisys.com/ghashtag/RNForKids/00-Init/data.json'
+const url = 'https://next.json-generator.com/api/json/get/4kS8cryQY'
 export default class App extends Component {
   
   state = {
-        title : 'STAR GATE',
+        title : 'Диалоги',
         data : []
       }
 
@@ -44,10 +44,9 @@ render() {
 const styles = StyleSheet.create({
   container : {
     marginTop: 30,
-    flexDirection: 'row',
+    flexDirection: 'column',
     flexWrap: 'wrap',
     flexShrink: 2,
-    justifyContent: 'space-around',
     marginBottom: 150
     
   }

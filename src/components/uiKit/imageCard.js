@@ -1,21 +1,16 @@
 import React from 'react'
 import { Text, StyleSheet, View, Image } from 'react-native'
-import { w} from '../../../constant'
+import { w, h} from '../../../constant'
 
 
 const ImageCard = ({data}) => {
     const { h1, cover, container, sub,yearStyle } = styles
-    const { image, name, year} = data
+    const { picture, first, age} = data
     return (
         <View style={container}>
-            <View style = {sub}>
-                <Image style={cover} source = {{uri: image}} />
-            </View>
-            <Text style = {h1}> {name.toUpperCase()}</Text>
-
-            <View>
-                <Text style={yearStyle}>{year}</Text>
-            </View>
+                <Image style={cover} source = {{uri: picture}} />
+                <Text style = {h1}> {first}</Text>
+                {/* <Text style={yearStyle}>{age}</Text>             */}
        </View>
        
     )
@@ -23,41 +18,34 @@ const ImageCard = ({data}) => {
 
 const styles = StyleSheet.create({
     container:{
-        width: w/2.4,
-        paddingVertical: 10
+        width: w/1,
+        height: h/8,
+        paddingVertical: 10,
+        backgroundColor: 'pink'
         
     },
     h1: {
+        width: w/3,
+        alignSelf: 'center',
+        textAlignVertical: 'top',
         fontFamily: 'AvenirNext-DemiBold',
         fontSize: 18,
-        alignSelf: 'center',
-        textAlign : 'center',
-        width: w / 2.4,
-        paddingTop: 10
+        
     },
 
     yearStyle: {
         fontSize: 14,
-        textAlign: 'center',
         color: '#000099'
 
     },
     cover: {
-        width: w/2.3,
-        height: w*0.63,
-        borderRadius: 10
+        width: w/6,
+        height: h/12,
+        borderRadius: 50
+
 
     },
-    sub: {
-        shadowColor: '#000',
-        shadowRadius: 8,
-        shadowOffset: {width: 0, height: 5},
-        shadowOpacity: 0.4,
-        backgroundColor: 'white',
-        borderRadius: 10, 
-        
-
-    }
+    
 })
 
 export  {ImageCard}
