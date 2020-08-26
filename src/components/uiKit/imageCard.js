@@ -4,13 +4,18 @@ import { w, h} from '../../../constant'
 
 
 const ImageCard = ({data}) => {
-    const { h1, cover, container, sub,yearStyle } = styles
-    const { picture, first, age} = data
+    const { h1, cover, container,yearStyle, containerNameBalance, containerNameBalanceStyle} = styles
+    const { picture, first, age, balance} = data
     return (
         <View style={container}>
                 <Image style={cover} source = {{uri: picture}} />
-                <Text style = {h1}> {first}</Text>
-                {/* <Text style={yearStyle}>{age}</Text>             */}
+                <View style = { containerNameBalance}>
+                    <Text style = {h1}> {first}</Text>
+                    <Text style = {containerNameBalanceStyle}>{ balance }</Text> 
+                </View>
+                
+                <Text style={yearStyle}>{age}</Text>  
+                            
        </View>
        
     )
@@ -18,33 +23,58 @@ const ImageCard = ({data}) => {
 
 const styles = StyleSheet.create({
     container:{
-        width: w/1,
+        flex: 1,
+        flexDirection: 'row',
         height: h/8,
         paddingVertical: 10,
-        backgroundColor: 'pink'
+        backgroundColor: 'white'
         
     },
     h1: {
-        width: w/3,
-        alignSelf: 'center',
-        textAlignVertical: 'top',
         fontFamily: 'AvenirNext-DemiBold',
         fontSize: 18,
+        flex: 2
+        
+        
         
     },
 
     yearStyle: {
         fontSize: 14,
-        color: '#000099'
+        color: 'black',
+        textAlign: 'center',
+        flex: 1
+        
+        
+        
 
     },
     cover: {
-        width: w/6,
-        height: h/12,
-        borderRadius: 50
+        borderRadius: 50,
+        justifyContent: 'center',
+        flex:1,
+        marginLeft: 10
+        
+        
 
 
     },
+    containerNameBalance:{
+        flexDirection: 'column',
+        flex: 3,
+        marginLeft: 5,
+        
+
+
+
+    },
+    containerNameBalanceStyle:{
+        textAlignVertical:'top',
+        fontSize: 16,
+        color: '#696969',
+    }
+
+    
     
 })
 

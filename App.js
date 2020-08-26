@@ -29,7 +29,10 @@ render() {
   return (
   <View>
       <Header title={title}/>
-      <ScrollView>
+      
+  
+  
+    <ScrollView>
         <View style = {container}>
         { data.map(item => (
             <ImageCard data = {item} key = {item.id} />   
@@ -37,6 +40,7 @@ render() {
         }
         </View>
       </ScrollView>
+  
   </View>
   )
   }
